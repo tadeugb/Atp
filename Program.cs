@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 
@@ -243,7 +244,38 @@ namespace Atp
         }
 
         public static void Ex_13()
-        {
+        { // preciso repassar aqui novamente.
+            double x0, x1, y0, y1, x, y;
+
+            Console.Write("Digite o limite inferior do intervalo X (x0): ");
+            x0 = double.Parse(Console.ReadLine() ?? "");
+
+            Console.Write("Digite o limite superior do intervalo X (x1): ");
+            x1 = double.Parse(Console.ReadLine() ?? "");
+
+            Console.Write("Digite o limite inferior do intervalo Y (y0): ");
+            y0 = double.Parse(Console.ReadLine() ?? "");
+
+            Console.Write("Digite o limite superior do intervalo Y (y1): ");
+            y1 = double.Parse(Console.ReadLine() ?? "");
+
+            Console.Write("Digite o valor de x para interpolar: ");
+            x = double.Parse(Console.ReadLine() ?? "");
+
+            // Validação: x deve estar dentro do intervalo [x0, x1]
+            if (x < x0 || x > x1)
+            {
+                Console.WriteLine("Erro: x deve ser interno ao intervalo [x0, x1].");
+            }
+            else
+            {
+                // Fórmula: y = y0 + (y1 - y0) * ((x - x0) / (x1 - x0))
+                y = y0 + (y1 - y0) * ((x - x0) / (x1 - x0));
+
+                Console.WriteLine($"O valor interpolado y = {y:F4}");
+            }
+
+            Menu();
         }
 
         public static void Ex_14()
@@ -263,6 +295,219 @@ namespace Atp
                 System.Console.WriteLine("Não, o número não é divisível por 3 e 5");
             }
             Menu();
+        }
+
+        public static void Ex_15()
+        {
+            int trianguloA, trianguloB, trianguloC;
+
+            Console.Write("Digite o lado A: ");
+            trianguloA = int.Parse(Console.ReadLine() ?? "");
+            Console.Write("Digite o lado B: ");
+            trianguloB = int.Parse(Console.ReadLine() ?? "");
+            Console.Write("Digite o lado C: ");
+            trianguloC = int.Parse(Console.ReadLine() ?? "");
+
+
+            if (trianguloA < trianguloB + trianguloC && trianguloB < trianguloA + trianguloC && trianguloC < trianguloA + trianguloB)
+            {
+                Console.WriteLine("Triângulo válido!");
+            }
+            else
+            {
+                Console.WriteLine("Triângulo inválido.");
+            }
+            Menu();
+        }
+
+        public static void Ex_16()
+        {
+            int unidades = 20, unidadeDigitada;
+            double coxinha = 2.0, coxinhaCaipara = 1.50;
+
+            System.Console.Write("Digite a quantidade de coxinha: ");
+            unidadeDigitada = int.Parse(Console.ReadLine() ?? "");
+
+            if (unidadeDigitada >= unidades)
+            {
+                System.Console.WriteLine($"O seu valor da cozinha e R$ {unidades * coxinhaCaipara:F2}");
+            }
+            else
+            {
+                System.Console.WriteLine($"O seu valor da cozinha e R$ {unidades * coxinha:F2}");
+            }
+            Menu();
+
+        }
+
+        // SEGUNDA LISTA DE ATP
+
+        public static void Ex_17()
+        {
+            int numero;
+
+            System.Console.Write("Digite un numero 0 a 5: ");
+            numero = int.Parse(Console.ReadLine() ?? "");
+
+            if (numero == 1)
+            {
+                System.Console.WriteLine("Seu numero e Um");
+            }
+            else if (numero == 2)
+            {
+                System.Console.WriteLine("Seu numero e dois");
+            }
+            else if (numero == 3)
+            {
+                System.Console.WriteLine("Seu numero e treis");
+            }
+            else if (numero == 4)
+            {
+                System.Console.WriteLine("Seu numero e quatro");
+            }
+            else if (numero == 5)
+            {
+                System.Console.Write("Seu numero e Cinco");
+            }
+            else
+            {
+                System.Console.Write("Invalido");
+            }
+        }
+
+        public static void Ex_18()
+        {
+            int idade1, idade2, idade3;
+
+            System.Console.Write("Digite sua idade: ");
+            idade1 = int.Parse(Console.ReadLine() ?? "");
+            System.Console.Write("Digite sua idade: ");
+            idade2 = int.Parse(Console.ReadLine() ?? "");
+            System.Console.Write("Digite sua idade: ");
+            idade3 = int.Parse(Console.ReadLine() ?? "");
+
+            if (idade1 > idade2 && idade1 > idade3)
+            {
+                System.Console.WriteLine($"Maior idade e {idade1}");
+            }
+            else if (idade2 > idade1 && idade2 > idade3)
+            {
+                System.Console.WriteLine($"Maior idade e {idade2}");
+            }
+            else if (idade3 > idade1 && idade3 > idade2)
+            {
+                System.Console.WriteLine($"Maior idade e {idade2}");
+            }
+
+            if (idade1 < idade2 && idade1 < idade3)
+            {
+                System.Console.WriteLine($"Menor idade e {idade1}");
+            }
+            else if (idade2 < idade1 && idade2 < idade3)
+            {
+                System.Console.WriteLine($"Menor idade e {idade2}");
+            }
+            else if (idade3 < idade1 && idade3 < idade2)
+            {
+                System.Console.WriteLine($"Menor idade e {idade2}");
+            }
+        }
+        public static void Ex_19()
+        {
+            int idade, categoriaB, categoriaC, categoriaD;
+
+            System.Console.Write("Digite a sua idade: ");
+            idade = int.Parse(Console.ReadLine() ?? "");
+
+
+            if (idade < 18)
+            {
+                System.Console.WriteLine("Nao e apto para carteira nao tem idade");
+            }
+            else if (idade <= 18)
+            {
+                System.Console.Write("Qual e sua carteira: ");
+            }
+
+
+        }
+
+        public static void Ex_20()
+        {
+            int valor;
+
+            System.Console.Write("Digite um numero para saber ser e divisivel: ");
+            valor = int.Parse(Console.ReadLine() ?? "");
+
+            if (valor % 3 == 0 && valor % 5 == 0)
+            {
+                System.Console.WriteLine("Seu numero e divisivel");
+            }
+            else
+            {
+                System.Console.WriteLine("Seu numero e nao e divisivel");
+            }
+        }
+        public static void Ex_21()
+        {
+            int w, x, y, z;
+            System.Console.WriteLine("Seu numero da equacao que gotaria de fazer");
+            System.Console.WriteLine("1 - Geometria");
+            System.Console.WriteLine("2 - Ponderada");
+            System.Console.WriteLine("3 - Hormonica");
+            System.Console.WriteLine("4 - Aritimetrica");
+            System.Console.Write("Digite O unumero: ");
+            w = int.Parse(Console.ReadLine() ?? "");
+
+            if (w == 1)
+            {
+                System.Console.Write($"Digite seu numero x: ");
+                x = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero y: ");
+                y = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero z: ");
+                z = int.Parse(Console.ReadLine() ?? "");
+
+                double resultando = Math.Sqrt(x * y * z);
+
+                System.Console.Write($"Digite seu numero: {resultando}");
+            }
+            else if (w == 2)
+            {
+                System.Console.Write($"Digite seu numero x: ");
+                x = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero y: ");
+                y = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero z: ");
+                z = int.Parse(Console.ReadLine() ?? "");
+
+                double resultando = (x + 2 * y + 3 * z) / 6;
+                System.Console.Write($"Digite seu numero: {resultando}");
+            }
+            else if (w == 3)
+            {
+                System.Console.Write($"Digite seu numero x: ");
+                x = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero y: ");
+                y = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero z: ");
+                z = int.Parse(Console.ReadLine() ?? "");
+
+                double resultando = 1 / ((1.0 / x) + (1.0 / y) + (1.0 / z));
+                System.Console.Write($"Digite seu numero: {resultando:F2}");
+            }
+            else if (w == 4)
+            {
+                System.Console.Write($"Digite seu numero x: ");
+                x = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero y: ");
+                y = int.Parse(Console.ReadLine() ?? "");
+                System.Console.Write($"Digite seu numero z: ");
+                z = int.Parse(Console.ReadLine() ?? "");
+
+                double resultando = (x + y + z) / 3;
+                System.Console.Write($"Digite seu numero: {resultando}");
+            }
         }
     }
 }
