@@ -1134,7 +1134,7 @@ namespace Atp
 
             for (int i = 1; i < 8; i++)
             {
-                soma += (int)Math.Pow(-10, i); // preciso enteder isso depois 
+                soma += (int)Math.Pow(-10, i); // preciso enteder isso depois
             }
             System.Console.WriteLine($"O valor da soma é: {soma}");
         }
