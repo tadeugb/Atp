@@ -1132,7 +1132,7 @@ namespace Atp
             //06
             int soma = 0;
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i <= 8; i++)
             {
                 soma += (int)Math.Pow(-10, i); // preciso enteder isso depois
             }
