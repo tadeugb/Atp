@@ -14,7 +14,7 @@ namespace Atp
         }
         public static void Menu()
         {
-            System.Console.Write("Digite o número do exercício da atividade da Beecrowd (de 1000 a 3486 ou 0 para sair): ");
+            System.Console.Write("Digite o número do exercício da atividade da ATP (00 a 99999 ou 0 para sair): ");
             string input = Console.ReadLine() ?? "";
 
             if (input == "0")
@@ -1044,7 +1044,19 @@ namespace Atp
         }
         public static void Ex_43()
         {//02
+            int n = 0, s;
 
+            System.Console.Write("Digite um numero: ");
+            n = int.Parse(Console.ReadLine() ?? "");
+
+            s = +1;
+
+            for (int i = 0; i <= n; i++)
+            {
+                s = s + i;
+            }
+
+            System.Console.WriteLine($"O valor da soma é: {s}");
         }
         public static void Ex_44()
         {//03
@@ -1074,6 +1086,57 @@ namespace Atp
             }
             System.Console.WriteLine($"Maior consumo: R$ {maiorConsumo:F2}");
             System.Console.WriteLine($"Menor consumo: R$ {menorConsumo:F2}");
+        }
+
+        public static void Ex_45()
+        {
+            //04
+            int numero = 31, numeroDigitado, diaOcoridoMaior = 0, diaOcoridoMenor = 0;
+            double maiorTemperatura = double.MinValue, menorTemperatura = double.MaxValue;
+
+            for (int i = 0; i < numero; i++)
+            {
+                System.Console.Write($"({i + 1}) Digite a temperatura: ");
+                numeroDigitado = int.Parse(Console.ReadLine() ?? "");
+
+                if (numeroDigitado > maiorTemperatura)
+                {
+                    maiorTemperatura = numeroDigitado;
+                    diaOcoridoMaior = i + 1;
+                }
+
+                else if (numeroDigitado < menorTemperatura)
+                {
+                    menorTemperatura = numeroDigitado;
+                    diaOcoridoMenor = i + 1;
+                }
+
+            }
+            System.Console.WriteLine($"A maior temperatura é: {maiorTemperatura}°C o dia foi {diaOcoridoMaior}");
+            System.Console.WriteLine($"A menor temperatura é: {menorTemperatura}°C o dia foi {diaOcoridoMenor}");
+        }
+
+        public static void Ex_46()
+        {
+            //05
+            int soma = 0;
+
+            for (int i = 4; i <= 10; i++)
+            {
+                soma += 4 * i - 5;
+            }
+            System.Console.WriteLine($"O valor da soma é: {soma}");
+        }
+        public static void Ex_47()
+        {
+            //06
+            int soma = 0;
+
+            for (int i = 1; i < 8; i++)
+            {
+                soma += (int)Math.Pow(-10, i); // preciso enteder isso depois 
+            }
+            System.Console.WriteLine($"O valor da soma é: {soma}");
         }
         public static void Ex_50()
         {//09
