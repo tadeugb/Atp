@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics.Contracts;
+using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 
@@ -1138,6 +1139,29 @@ namespace Atp
             }
             System.Console.WriteLine($"O valor da soma é: {soma}");
         }
+        public static void Ex_48()
+        {
+            //07
+            int soma = 0;
+
+            for (int i = 4; i <= 15; i++)
+            {
+                soma *= (3 * i - 20);
+            }
+            System.Console.WriteLine($"O valor da produtório é: {soma}");
+
+        }
+        public static void Ex_49()
+        {
+            //08
+            int soma = 0;
+
+            for (int i = 1; i <= 7; i++)
+            {
+                soma *= ((int)Math.Pow(i, 3) - 9);
+            }
+            System.Console.WriteLine($"O valor da produtório é: {soma}");
+        }
         public static void Ex_50()
         {//09
             int candidato, candidato1 = 0, candidato2 = 0, candidato3 = 0, branco = 0, nulo = 0, totalVotos = 0;
@@ -1185,6 +1209,158 @@ namespace Atp
             System.Console.WriteLine($"Total de votos nulos: {nulo}");
             System.Console.WriteLine($"Total de votos: {totalVotos}");
         }
-    }
+        public static void Ex_51()
+        {//10
+            int opcao;
 
+            do
+            {
+                System.Console.WriteLine("\n===== MENU DE CONVERSÃO DE TEMPERATURA =====");
+                System.Console.WriteLine("1. Converter de Celsius para Fahrenheit");
+                System.Console.WriteLine("2. Converter de Celsius para Kelvin");
+                System.Console.WriteLine("3. Converter de Fahrenheit para Celsius");
+                System.Console.WriteLine("4. Converter de Fahrenheit para Kelvin");
+                System.Console.WriteLine("5. Converter de Kelvin para Celsius");
+                System.Console.WriteLine("6. Converter de Kelvin para Fahrenheit");
+                System.Console.WriteLine("7. Sair");
+                System.Console.Write("Escolha uma opção: ");
+                opcao = int.Parse(Console.ReadLine() ?? "");
+
+                switch (opcao)
+                {
+                    case 1:
+                        System.Console.Write("Digite a temperatura em Celsius: ");
+                        double celsius = double.Parse(Console.ReadLine() ?? "");
+                        double fahrenheit = celsius * 9.0 / 5.0 + 32;
+                        System.Console.WriteLine($"Resultado: {fahrenheit:F2} °F");
+                        break;
+
+                    case 2:
+                        System.Console.Write("Digite a temperatura em Celsius: ");
+                        double c2 = double.Parse(Console.ReadLine() ?? "");
+                        double kelvin = c2 + 273.15;
+                        System.Console.WriteLine($"Resultado: {kelvin:F2} K");
+                        break;
+
+                    case 3:
+                        System.Console.Write("Digite a temperatura em Fahrenheit: ");
+                        double f3 = double.Parse(Console.ReadLine() ?? "");
+                        double c3 = (f3 - 32) * 5.0 / 9.0;
+                        System.Console.WriteLine($"Resultado: {c3:F2} °C");
+                        break;
+
+                    case 4:
+                        System.Console.Write("Digite a temperatura em Fahrenheit: ");
+                        double f4 = double.Parse(Console.ReadLine() ?? "");
+                        double k4 = (f4 - 32) * 5.0 / 9.0 + 273.15;
+                        System.Console.WriteLine($"Resultado: {k4:F2} K");
+                        break;
+
+                    case 5:
+                        System.Console.Write("Digite a temperatura em Kelvin: ");
+                        double k5 = double.Parse(Console.ReadLine() ?? "");
+                        double c5 = k5 - 273.15;
+                        System.Console.WriteLine($"Resultado: {c5:F2} °C");
+                        break;
+
+                    case 6:
+                        System.Console.Write("Digite a temperatura em Kelvin: ");
+                        double k6 = double.Parse(Console.ReadLine() ?? "");
+                        double f6 = (k6 - 273.15) * 9.0 / 5.0 + 32;
+                        System.Console.WriteLine($"Resultado: {f6:F2} °F");
+                        break;
+
+                    case 7:
+                        System.Console.WriteLine("Encerrando o programa. Até logo!");
+                        break;
+
+                    default:
+                        System.Console.WriteLine("Opção Inválida.");
+                        break;
+                }
+
+            } while (opcao != 7);
+        }
+
+        public static void Ex_52()
+        {
+            //11     
+        }
+
+        public static void Ex_53()
+        {
+            //12
+        }
+        public static void Ex_54() // LISTA 05
+        {
+            //01
+            double[] vetor = new double[31];
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                System.Console.Write($"Digite o valor da temperatura: {i + 1}: ");
+                vetor[i] = double.Parse(Console.ReadLine() ?? "");
+            }
+
+            System.Console.Write("Qual é a temperatura pesquisada: ");
+            double temperaturaPesquisada = double.Parse(Console.ReadLine() ?? "");
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] == temperaturaPesquisada)
+                {
+                    System.Console.Write($"{i + 1}, ");
+                }
+            }
+        }
+        public static void Ex_55()
+        {
+            int n;
+            System.Console.Write("Digite o tamanho do vetor: ");
+            n = int.Parse(Console.ReadLine() ?? "");
+
+            double[] vetor = new double[n];
+
+            System.Console.Write("Digite os valores do vetor: ");
+            int palimetro = int.Parse(Console.ReadLine() ?? "");
+
+            if (palimetro > 0)
+            {
+                // for (int i = 0 && ; )
+            }
+
+        }
+        public static void Ex_56()
+        {
+            //03
+            int[] n = new int[5];
+            int soma = 0;
+
+            for (int i = 0; i < n.Length; i++)
+            {
+                System.Console.Write($"Digite o valor do vetor: {i + 1}: ");
+                n[i] = int.Parse(Console.ReadLine() ?? "");
+                soma += n[i];
+            }
+            System.Console.WriteLine($"{soma}");
+        }
+        public static void Ex_57()
+        {
+            //04
+
+            double[] notas = new double[5];
+            double notaMaxima = double.MinValue;
+
+            for (int i = 0; i < notas.Length; i++)
+            {
+                System.Console.Write($"Digite a nota do aluno: {i + 1}: ");
+                notas[i] = double.Parse(Console.ReadLine() ?? "");
+                if (notas[i] > notaMaxima)
+                {
+                    notaMaxima = notas[i];
+                }
+            }
+            System.Console.WriteLine($"A nota máxima é: {notaMaxima}");
+        }
+    }
 }
